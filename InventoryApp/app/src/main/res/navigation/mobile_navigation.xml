@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/loginFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.inventoryapp.ui.home.HomeFragment"
+        android:label="@string/inventory"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_updateInventory"
+            app:destination="@id/updateInventory" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.inventoryapp.ui.dashboard.DashboardFragment"
+        android:label="@string/add_inventory"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.inventoryapp.ui.notifications.NotificationsFragment"
+        android:label="@string/chat"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/updateInventory"
+        android:name="com.example.inventoryapp.ui.update_inventory.UpdateInventoryFragment"
+        android:label="Update Inventory"
+
+        tools:layout="@layout/fragment_update_inventory" >
+
+        <argument
+            app:popUpTo="@+id/navigation_home"
+            android:name="arg"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true"
+            app:argType="com.example.inventoryapp.ui.dashboard.InventoryDataItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.inventoryapp.ui.auth.LoginFragment"
+        android:label="Login"
+
+        tools:layout="@layout/fragment_login" >
+
+
+        <action
+
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.inventoryapp.ui.auth.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            app:popUpTo="@id/loginFragment"
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.inventoryapp.MainActivity"
+        android:label="MainActivity" />
+</navigation>

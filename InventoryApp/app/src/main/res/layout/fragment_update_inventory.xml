@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".ui.update_inventory.UpdateInventoryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:background="@color/black"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/btnBack"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_keyboard_backspace_24"
+                    android:backgroundTint="@color/black"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Update Inventory"
+                    android:layout_centerInParent="true"
+                    android:textStyle="bold"
+
+                    android:textColor="@color/white"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Update Inventory"
+                android:textColor="@color/black"
+                android:textSize="32sp" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputName"
+                style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cursorColor="@color/black"
+                android:layout_marginTop="40dp"
+                app:boxBackgroundColor="@color/light_gray"
+                app:boxStrokeWidthFocused="0dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:hintTextColor="@color/black"
+                app:boxStrokeWidth="0dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Enter title"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputCatagory"
+                style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cursorColor="@color/black"
+                android:layout_marginTop="16dp"
+                app:boxBackgroundColor="@color/light_gray"
+                app:boxStrokeWidthFocused="0dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:hintTextColor="@color/black"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCatagory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Enter Catagory"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:padding="18dp"
+                    android:id="@+id/btnMinus"
+                    android:src="@drawable/baseline_remove_24"
+
+                    android:layout_weight=".4"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    app:tint="@color/black" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/textInputItemQuantity"
+                    android:layout_width="0dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1.2"
+                    android:layout_height="wrap_content"
+                    android:elevation="0dp"
+                    app:cardBackgroundColor="@color/light_gray"
+                    >
+                    <TextView
+                        android:id="@+id/tvQuantity"
+                        android:layout_width="match_parent"
+
+                        android:layout_marginVertical="11dp"
+                        android:textAlignment="center"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="12"
+                        android:gravity="center_horizontal"
+                        android:textSize="18sp"
+                        android:textColor="@color/black" />
+                </com.google.android.material.card.MaterialCardView>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:padding="18dp"
+                    android:id="@+id/btnPlus"
+                    android:src="@drawable/baseline_add_24"
+
+                    android:layout_weight=".4"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    app:tint="@color/black" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="18dp"
+                android:text="UPDATE"
+                app:cornerRadius="16dp">
+            </com.google.android.material.button.MaterialButton>
+
+        </LinearLayout>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+
+</ScrollView>
